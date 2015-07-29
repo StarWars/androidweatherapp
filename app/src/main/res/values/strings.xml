@@ -5,13 +5,25 @@
     <string name="hello_world">Today, June 24</string>
     <string name="action_settings">Settings</string>
     <string name="action_refresh" translatable="false">Refresh</string>
+    <string name="action_location" translatable="false">Show Preferred Location</string>
+    <string name="action_share">Share</string>
+
     <string name="max_degrees">21</string>
     <string name="min_degrees">8</string>
     <string name="title_activity_detail">DetailActivity</string>
+
 
     <string name="title_activity_settings">Settings</string>
     <string name="pref_location_label">location</string>
     <string name="pref_location_key" translatable="false">Location</string>
     <string name="pref_location_default" translatable="false">90210</string>
+
+
+    <string name="metric" translatable="false">metric</string>
+    <string name="imperial" translatable="false">imperial</string>
+    <string name="settings_units_selection_key" translatable="false">Units</string>
+    <string name="settings_units_metric" translatable="false">Metric</string>
+    <string name="settings_units_selection_title" translatable="false">Units</string>
+
 
 </resources>

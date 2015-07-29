@@ -9,4 +9,11 @@
         android:singleLine="true"
         android:title="@string/pref_location_label" />
 
+    <ListPreference
+        android:defaultValue="@string/settings_units_metric"
+        android:entries="@array/settings_units_human_types"
+        android:entryValues="@array/settings_units_types_values"
+        android:key="@string/settings_units_selection_key"
+        android:title="@string/settings_units_selection_title" />
+
 </PreferenceScreen>

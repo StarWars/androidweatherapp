@@ -1,7 +1,11 @@
 package com.example.android.sunshine.app;
 
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
+import android.text.TextUtils;
 import android.text.format.Time;
 import android.util.Log;
 
@@ -43,6 +47,21 @@ public class FetchWeatherTask extends AsyncTask<String, Void, String[]> {
      */
     private String formatHighLows(double high, double low) {
         // For presentation, assume the user doesn't care about tenths of a degree.
+
+
+        Resources myR = SunshineApp.getAppContext().getResources();
+
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(SunshineApp.getAppContext());
+        String unitType = sharedPrefs.getString(myR.getString(R.string.settings_units_selection_key), myR.getString(R.string.settings_units_metric));
+
+        if (TextUtils.equals(unitType, myR.getString(R.string.imperial))) {
+            high = (high * 1.8) + 32;
+            low = (low * 1.8) + 32;
+        } else if (!TextUtils.equals(unitType, myR.getString(R.string.metric))) {
+            Log.d(LOG_TAG, "Unit type not found: " + unitType);
+        }
+
+
         long roundedHigh = Math.round(high);
         long roundedLow = Math.round(low);
 
